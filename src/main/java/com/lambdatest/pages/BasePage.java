@@ -1,0 +1,25 @@
+package com.lambdatest.pages;
+
+import org.openqa.selenium.*;
+
+public class BasePage {
+    public static WebDriver driver;
+
+    public void setDriver(WebDriver driver){
+        BasePage.driver = driver;
+    }
+
+    protected WebElement find(By locator){
+       return driver.findElement(locator);
+    }
+
+    protected void click(By locator){
+        find(locator).click();
+    }
+
+    protected String getText(By locator){
+       String text = find(locator).getText();
+       System.out.println("Text: " + text);
+       return text;
+    }
+}

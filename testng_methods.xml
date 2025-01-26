@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Annotations">
+    <test name="Run Methods">
+        <classes>
+            <class name="DemoTestNG.ConfigurationAnnotations_1_DatePickers">
+                <methods>
+                    <exclude name="test1_BootstrapDatePicker"/> <!-- The exclude don't execute the method  -->
+                    <include name="test2_JQueryDatePicker"/> <!-- The include execute the mention method 'test2_JQueryDatePicker' from the class-->
+                </methods>
+            </class>
+            <class name="DemoTestNG.ConfigurationAnnotations_2_ListBox">
+
+            </class>
+        </classes>
+    </test>
+</suite>

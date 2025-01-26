@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel Testing" parallel="tests" thread-count="2"> <!-- 'Parallel' is a keyword to tell the TestNG to run each (tests,method,classes) ... in a new thread.
+ thread-count is a keyword - number of threads to use when run our test in parallel -->
+    <test name="(1) Parallel Execution">
+        <classes>
+            <class name="DemoTestNG.ParallelTesting1"/>
+            <class name="DemoTestNG.ParallelTesting2"/>
+        </classes>
+    </test>
+    <test name="(2) Parallel Execution">
+        <classes>
+            <class name="DemoTestNG.ParallelTesting1"/>
+            <class name="DemoTestNG.ParallelTesting2"/>
+        </classes>
+    </test>
+</suite>
