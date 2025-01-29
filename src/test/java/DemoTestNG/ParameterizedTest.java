@@ -4,10 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class ParameterizedTest {
     WebDriver driver;
@@ -23,7 +20,7 @@ public class ParameterizedTest {
     }
 
     @Test
-    @Parameters({"Task","TestResult"}) // Pass parameters from the 'testng_parameters'.xml file
+    @Parameters({"Task","TestResult"}) // Pass parameters from the 'testng_parameters'.xml file. Use {} when need to pass more than one parameter to test
     public void testFileDownload(String task, String testResult){
         // Step 2: Click the file download link
         driver.findElement(By.linkText("File Download")).click();
@@ -35,6 +32,21 @@ public class ParameterizedTest {
         driver.findElement(By.id("link-to-download")).click();
         // The test should be run from the 'testng_parameters'.xml file
     }
+
+    /*@Test
+    @Parameters({"Task","TestResult"}) // Pass parameters from the 'testng_optinal_parameters'.xml file. Use {} when need to pass more than one parameter to test
+    public void testFileDownload2(String task,@Optional("Optional parameter") String testResult){
+        System.out.println("Optioanl parameter: " + testResult);
+        // Step 2: Click the file download link
+        driver.findElement(By.linkText("File Download")).click();
+        // Step 3: Enter data
+        driver.findElement(By.id("textbox")).sendKeys(task + " Execution: " + testResult);
+        // Step 4: Click the generate file button
+        driver.findElement(By.id("create")).click();
+        // Step 5: Click the download link
+        driver.findElement(By.id("link-to-download")).click();
+        // The test should be run from the 'testng_parameters'.xml file
+    }*/
 
     @AfterClass
     public void tearDown() throws InterruptedException {

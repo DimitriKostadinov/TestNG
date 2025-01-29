@@ -5,7 +5,7 @@
     <parameter name="Task" value="Download File"/>
 
     <test name="Pass parameters test">
-        <parameter name="TestResult" value="Pass"></parameter>
+        <parameter name="TestResult" value="Pass"></parameter> <!--The parameter is local for the test -->
         <classes>
             <class name="DemoTestNG.ParameterizedTest"></class>
         </classes>

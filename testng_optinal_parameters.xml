@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parameters suite">
+    <parameter name="URL" value="https://www.lambdatest.com/selenium-playground/"></parameter> <!--The parameter is global for all tests in this suite -->
+    <parameter name="Task" value="Download File"/>
+    <!-- Before run the test commend in ParameterizedTest.java class the test 'testFileDownload',
+     because for this test the parameter 'TestResult' has not been marked @Optional or defined -->
+    <test name="Pass parameters test">
+        <classes>
+            <class name="DemoTestNG.ParameterizedTest"></class>
+        </classes>
+    </test>
+
+</suite>
