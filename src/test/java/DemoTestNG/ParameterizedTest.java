@@ -37,15 +37,10 @@ public class ParameterizedTest {
     @Parameters({"Task","TestResult"}) // Pass parameters from the 'testng_optinal_parameters'.xml file. Use {} when need to pass more than one parameter to test
     public void testFileDownload2(String task,@Optional("Optional parameter") String testResult){
         System.out.println("Optioanl parameter: " + testResult);
-        // Step 2: Click the file download link
         driver.findElement(By.linkText("File Download")).click();
-        // Step 3: Enter data
         driver.findElement(By.id("textbox")).sendKeys(task + " Execution: " + testResult);
-        // Step 4: Click the generate file button
         driver.findElement(By.id("create")).click();
-        // Step 5: Click the download link
         driver.findElement(By.id("link-to-download")).click();
-        // The test should be run from the 'testng_parameters'.xml file
     }*/
 
     @AfterClass

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Enable or Disable test suite">
+    <parameter name="URL" value="https://www.lambdatest.com/selenium-playground/"></parameter> <!--The parameter is global for all tests in this suite -->
+
+    <test name="Select from dropdown test" enabled="true"> <!-- enable 'true' by default -->
+        <parameter name="Option" value="Thursday"></parameter> <!--The parameter is local for the test -->
+        <classes>
+            <class name="DemoTestNG.EnableOrDisableTest"></class>
+        </classes>
+    </test>
+
+    <test name="Select from dropdown test2" enabled="false">
+        <parameter name="Option" value="Monday"></parameter>
+        <classes>
+            <class name="DemoTestNG.EnableOrDisableTest"></class>
+        </classes>
+    </test>
+
+    <test name="Multi select option test" enabled="false"> <!-- enable 'false' the test is disable and will not be executed-->
+        <parameter name="firstOption" value="Florida"></parameter>
+        <parameter name="lastOption" value="New Jersey"></parameter>
+        <classes>
+            <class name="DemoTestNG.EnableOrDisableTest"></class>
+        </classes>
+    </test>
+
+</suite>

@@ -5,7 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
-public class First_Automated_Test {
+public class TestPriority {
     WebDriver driver;
 
     /*@BeforeClass
