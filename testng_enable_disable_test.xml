@@ -10,14 +10,14 @@
         </classes>
     </test>
 
-    <test name="Select from dropdown test2" enabled="false">
+    <test name="Select from dropdown test2" enabled="false">  <!-- enable 'false' the test is disable and will not be executed-->
         <parameter name="Option" value="Monday"></parameter>
         <classes>
             <class name="DemoTestNG.EnableOrDisableTest"></class>
         </classes>
     </test>
 
-    <test name="Multi select option test" enabled="false"> <!-- enable 'false' the test is disable and will not be executed-->
+    <test name="Multi select option test" enabled="false">
         <parameter name="firstOption" value="Florida"></parameter>
         <parameter name="lastOption" value="New Jersey"></parameter>
         <classes>

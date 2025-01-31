@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Group test">
+    <groups>
+        <run>
+            <include name="smoke"/> <!-- suite level group include all tests in the xml file -->
+        </run>
+    </groups>
+    <test name="Run Class TestClass1 and TestClass2">
+        <groups>
+            <run>
+                <!-- test level group -->
+                <!-- <include name="functional"/> -->
+
+                <!-- If a test is in more than one group, and one of
+                these groups is excluded the test will not be executed -->
+                <!-- <exclude name="regression"/> -->
+
+                <!--A partial group 'all' is a group that is set on a class level see class 'TestClass1.java' -->
+                <!-- <include name="all"/> -->
+            </run>
+        </groups>
+        <classes>
+            <class name="GroupTests.TestClass1"/>
+            <class name="GroupTests.TestClass2"/>
+        </classes>
+    </test>
+    <test name="Run Class TestClass2">
+        <classes>
+            <class name="GroupTests.TestClass2"/>
+        </classes>
+    </test>
+
+</suite>

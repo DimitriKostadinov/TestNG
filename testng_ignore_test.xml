@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Ignore test">
+    <test name="Run Class IgnoreTest and IgnoreTest2">
+        <classes>
+            <class name="IgnoreTestPackege.IgnoreTest"/>
+            <class name="IgnoreTestPackege.IgnoreTest2"/>
+            <!--If you want to ignore all tests in all classes in the package write
+            @Ignore tag above the package name in the 'package-info.java' file -->
+        </classes>
+    </test>
+</suite>

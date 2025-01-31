@@ -36,8 +36,8 @@ public class EnableOrDisableTest {
                 "\n The selected option is not correct!");
     }
 
-    /*@Parameters({"firstOption","lastOption"})
-    @Test
+    @Parameters({"firstOption","lastOption"})
+    @Test(enabled = false)// if you want to disable test it should be disabled in the class and in the xml file
     public void multiSelectOption(String firstOption,String lastOption){
         driver.findElement(By.linkText("Select Dropdown List")).click();
         WebElement selectElement = driver.findElement(By.id("multi-select"));
@@ -55,7 +55,7 @@ public class EnableOrDisableTest {
         softAssert.assertAll();
         // When use soft assert you should create an object from SoftAssert class and use
         // assertAll() method to show the asserts in the console.
-    }*/
+    }
 
     @AfterClass
     public void tearDown()
