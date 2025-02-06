@@ -29,7 +29,7 @@ public class DataProvidersTest {
         return data;
     }
 
-    @Test(dataProvider = "ajaxData")
+    @Test(dataProvider = "ajaxData") // When the DataProvider doesn't have a name we use the name of the method
     public void testAjaxForm(String name, String comment){
         System.out.println("Name: " + name);
         System.out.println("Comment: " + comment);
@@ -39,7 +39,7 @@ public class DataProvidersTest {
         driver.findElement(By.id("btn-submit")).click();
     }
 
-    @Test(dataProviderClass = DataProviderOnly.class, dataProvider = "input-provider")
+    @Test(dataProviderClass = DataProviderOnly.class, dataProvider = "input-provider")// Called the DataProvider by name
     public void testInputFields(String name,String email,String password,String company,String website,
                                 String country,String city, String address1, String address2, String state, int zipCode){
         System.out.println("Name: " + name + " " + "Email: " + email + " "  + "Password: " + password + " "  +

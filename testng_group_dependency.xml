@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Group dependency">
+    <test name="test1">
+        <groups>
+            <dependencies>
+                <group name="Sanity" depends-on="Smoke"/>
+                <group name="Regression" depends-on="Sanity"/>
+                <!-- If one test didn't pass from the 'depends-on' group
+                 the group that should be executed will be ignored and not executed-->
+            </dependencies>
+        </groups>
+        <classes>
+            <class name="DependecyTests.TestGroupDependency"/>
+        </classes>
+    </test>
+</suite>
