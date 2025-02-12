@@ -1,5 +1,6 @@
 package com.apachepoiexcelfiles;
 
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -9,6 +10,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
 
 public class CreateWriteReadExcel {
@@ -49,7 +51,7 @@ public class CreateWriteReadExcel {
     }
 
     public static void ReadExcel() throws IOException {
-        File file = new File("K:\\JAVAProjects\\TestNG\\resources\\ExcelFiles\\TestDataForRead.xlsx");
+        File file = new File("resources/ExcelFiles/TestDataForRead.xlsx");
         FileInputStream fis = new FileInputStream(file);
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
         XSSFSheet sheet = workbook.getSheetAt(0); // The sheets in an Excel file is counted like items in an array from 0
@@ -57,35 +59,24 @@ public class CreateWriteReadExcel {
        // System.out.println(cellValue);
         int rowCount = sheet.getPhysicalNumberOfRows();
         //getPhysicalNumberOfRows - Returns the number of physically defined rows (the row that is NOT EMPTY)
+        int cellCount = sheet.getRow(0).getPhysicalNumberOfCells();
+        //getPhysicalNumberOfCells - Returns the number of physically defined cells (the cells that is NOT EMPTY)
+
+        String[][] data = new String[rowCount][cellCount];
+        DataFormatter df = new DataFormatter();
 
         for (int i=0; i<rowCount; i++){
-            XSSFRow row = sheet.getRow(i);
-            int cellCount = row.getPhysicalNumberOfCells();
-            //getPhysicalNumberOfCells - Returns the number of physically defined cells (the cells that is NOT EMPTY)
             for (int j=0;j<cellCount;j++){
-                XSSFCell cell = row.getCell(j);
-                String cellVaue = getCellValue(cell);
-                System.out.print("||" + cellVaue);
+                data[i][j] = df.formatCellValue(sheet.getRow(i).getCell(j));
             }
-            System.out.println();
         }
+
+        for (String[] dataArr : data) { // foreach loop in java :)
+            System.out.println(Arrays.toString(dataArr));
+        }
+
         workbook.close();
         fis.close();
     }
 
-    public static String getCellValue(XSSFCell cell){
-        switch (cell.getCellType()){
-            case NUMERIC:
-                return String.valueOf(cell.getNumericCellValue());
-
-            case BOOLEAN:
-                return String.valueOf(cell.getBooleanCellValue());
-
-            case STRING:
-                return String.valueOf(cell.getStringCellValue());
-
-            default:
-                return cell.getStringCellValue();
-        }
-    }
 }

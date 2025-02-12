@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -49,5 +50,8 @@ public class AssertionsTest {
         softAssert.assertTrue(actualAgeGroup.contains("15"),"Actual age group is not correct");
         softAssert.assertAll(); // When use soft assert you should create an object from SoftAssert class and use assertAll() method to show the asserts in the console.
     }
-
+    @AfterMethod
+    public void tearDown(){
+        driver.quit(); // close the opened Chrome tab from the test
+    }
 }
