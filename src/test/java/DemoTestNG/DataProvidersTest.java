@@ -69,7 +69,7 @@ public class DataProvidersTest {
 
     @AfterMethod
     public void tearDown(){
-        driver.quit(); // close the opened Chrome tab from the test
+        //driver.quit(); // close the opened Chrome tab from the test
     }
 
 }

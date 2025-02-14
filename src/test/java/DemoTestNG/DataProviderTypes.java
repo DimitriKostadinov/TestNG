@@ -14,14 +14,12 @@ public class DataProviderTypes {
     }
 
     @Test(dataProvider = "dp2")
-    public void TestDp2(Object[] s) throws Exception{ // When the DataProvider type is Object the
-        // method parameter must be Object as well
+    public void TestDp2(Object[] s) throws Exception{
         System.out.println(s[0]+ " - " + s[1]);
     }
 
     @Test(dataProvider = "DpIndices")
-    public void TestDpIndices(String s) throws Exception{ // When the DataProvider type is Object the
-        // method parameter must be Object as well
+    public void TestDpIndices(String s) throws Exception{
         System.out.println(s);
     }
 
