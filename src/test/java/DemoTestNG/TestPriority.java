@@ -8,19 +8,6 @@ import org.testng.annotations.*;
 public class TestPriority {
     WebDriver driver;
 
-    /*@BeforeClass
-    public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://www.lambdatest.com/selenium-playground/");
-    }
-
-    @AfterClass
-    public void tearDown(){
-        driver.quit();
-    }*/
-
     @BeforeMethod
     public void setUp(){
         WebDriverManager.chromedriver().setup();

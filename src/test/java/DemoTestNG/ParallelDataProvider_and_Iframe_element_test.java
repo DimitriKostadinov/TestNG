@@ -17,14 +17,14 @@ import java.time.Duration;
 
 public class ParallelDataProvider_and_Iframe_element_test {
 
-    //ThreadLocal<WebDriver> driver = new ThreadLocal<>(); -
-    // Създава се ThreadLocal променлива, която ще съхранява WebDriver инстанцията за всяка нишка.
+//ThreadLocal<WebDriver> driver = new ThreadLocal<>(); -
+// Creates a ThreadLocal variable that will store the WebDriver instance for each thread.
 
-    //driver.set(webDriver);: Задава се WebDriver инстанцията за текущата нишка.
-    //driver.get();: Извлича WebDriver инстанцията за текущата нишка.
-    //driver.remove();: Премахва WebDriver инстанцията от текущата нишка, за да предотврати изтичане на памет.
+//driver.set(webDriver);: Sets the WebDriver instance for the current thread.
+//driver.get();: Retrieves the WebDriver instance for the current thread.
+//driver.remove();: Removes the WebDriver instance from the current thread to prevent memory leaks.
 
-    // ThreadLocal за WebDriver инстанциите
+    // ThreadLocal for WebDriver instances
     private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     @BeforeMethod
