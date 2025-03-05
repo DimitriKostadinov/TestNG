@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Listeners">
+    <listeners>
+        <listener class-name="com.listeners.ItestListeners"/>
+        <!--<listener class-name="com.listeners.ItestListeners"/> This is an example we can have as many listeners as we need -->
+    </listeners>
+    <test name="Test1">
+        <classes>
+            <class name="DemoTestNG.DummyTests">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Test2">
+        <classes>
+            <class name="DemoTestNG.DummyTests">
+                <methods>
+                    <include name="test3"/>
+                    <include name="test4"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
