@@ -2,24 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-11T20:04:23 EET" name="Default Suite" finished-at="2025-03-11T20:04:28 EET" duration-ms="5593">
+  <suite started-at="2025-03-14T21:44:07 EET" name="Default Suite" finished-at="2025-03-14T21:44:11 EET" duration-ms="4382">
     <groups>
     </groups>
-    <test started-at="2025-03-11T20:04:23 EET" name="TestNG" finished-at="2025-03-11T20:04:28 EET" duration-ms="5593">
-      <class name="DemoTestNG.JavascriptExecutorAndCSSSelector">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:DemoTestNG.JavascriptExecutorAndCSSSelector@554e218]" started-at="2025-03-11T20:04:23 EET" name="setUp" finished-at="2025-03-11T20:04:25 EET" duration-ms="2735" status="PASS">
+    <test started-at="2025-03-14T21:44:07 EET" name="TestNG" finished-at="2025-03-14T21:44:11 EET" duration-ms="4382">
+      <class name="DemoTestNG.XpathFunctions">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:DemoTestNG.XpathFunctions@42b02722]" started-at="2025-03-14T21:44:07 EET" name="setUp" finished-at="2025-03-14T21:44:09 EET" duration-ms="2379" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="test1()[pri:0, instance:DemoTestNG.JavascriptExecutorAndCSSSelector@554e218]" started-at="2025-03-11T20:04:25 EET" name="test1" finished-at="2025-03-11T20:04:28 EET" duration-ms="2563" status="PASS">
+        <test-method signature="testLogicalOperators()[pri:0, instance:DemoTestNG.XpathFunctions@42b02722]" started-at="2025-03-14T21:44:09 EET" name="testLogicalOperators" finished-at="2025-03-14T21:44:11 EET" duration-ms="1968" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:DemoTestNG.JavascriptExecutorAndCSSSelector@554e218]" started-at="2025-03-11T20:04:28 EET" name="tearDown" finished-at="2025-03-11T20:04:28 EET" duration-ms="262" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- DemoTestNG.JavascriptExecutorAndCSSSelector -->
+        </test-method> <!-- testLogicalOperators -->
+      </class> <!-- DemoTestNG.XpathFunctions -->
     </test> <!-- TestNG -->
   </suite> <!-- Default Suite -->
 </testng-results>
