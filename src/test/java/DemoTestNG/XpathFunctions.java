@@ -5,11 +5,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class XpathFunctions {
 
@@ -46,6 +51,33 @@ public class XpathFunctions {
         Select select = new Select(selectElement);
         select.selectByVisibleText("Art");
         driver.findElement(By.id("gh-search-btn")).click();
+    }
+
+    //Function: text()
+    @Test
+    public void testTextFunc(){
+        driver.findElement(By.xpath("//a[text()='Electronics']")).click();
+        String currURL = driver.getCurrentUrl();
+        Assert.assertTrue(currURL.contains("https://www.ebay.com/b/Electronics/"),"\n Wrong redirect!\n");
+    }
+
+    //Function: start-with() and mouse hover on element
+    @Test
+    public void testStartWithFunc(){
+        WebElement element = driver.findElement(By.xpath("//a[starts-with(@_sp,'p4375194.m1379.l3250')]"));
+
+        // Instantiate the Action class
+        Actions actions = new Actions(driver);
+        // Perform the mouse hover action
+        actions.moveToElement(element).build().perform();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element2 = wait.until(ExpectedConditions.elementToBeClickable
+        (By.xpath("//*[@id=\"vl-flyout-nav\"]/ul/li[3]/div[2]/div[1]/nav[1]/ul/li[1]")));
+        element2.click();
+
+        String currURL = driver.getCurrentUrl();
+        Assert.assertTrue(currURL.contains("https://www.ebay.com/b/Cell-Phones-Smart-"), "\n Wrong redirect!\n");
     }
 
     @AfterMethod
