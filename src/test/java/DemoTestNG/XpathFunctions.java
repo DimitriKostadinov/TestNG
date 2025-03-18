@@ -170,6 +170,7 @@ public class XpathFunctions {
     //Xpath using dynamic xpath via '*' // the same example like testAncestors()
     @Test
     public void testAsterisk(){
+
         driver.findElement(By.xpath("//*[@class='vl-flyout-nav__js-tab'][1]")).click();
     }
 
