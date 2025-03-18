@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Default_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_Suite" title="DemoTestNG.XpathFunctions" class="method navigator-link" hash-for-method="testStartWithFunc">testStartWithFunc</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_Suite" title="DemoTestNG.XpathFunctions" class="method navigator-link" hash-for-method="testAncestors">testAncestors</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_Suite -->
@@ -126,9 +126,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testStartWithFunc">
-                  </a> <!-- testStartWithFunc -->
-                  <span class="method-name">testStartWithFunc</span>
+                  <a name="testAncestors">
+                  </a> <!-- testAncestors -->
+                  <span class="method-name">testAncestors</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -147,7 +147,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;DemoTestNG.XpathFunctions&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;testStartWithFunc&quot;/&gt;
+          &lt;include name=&quot;testAncestors&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- DemoTestNG.XpathFunctions --&gt;
     &lt;/classes&gt;
@@ -191,9 +191,9 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testStartWithFunc')
+data.setCell(0, 1, 'testAncestors')
 data.setCell(0, 2, 'DemoTestNG.XpathFunctions')
-data.setCell(0, 3, 2045);
+data.setCell(0, 3, 2480);
 window.suiteTableData['Default_Suite']= { tableData: data, tableDiv: 'times-div-Default_Suite'}
 return data;
 }
@@ -213,17 +213,37 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">13 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">DemoTestNG.XpathFunctions</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">testFOllowingSibling</span>
+                <br/>
+                <span class="ignored-method-name">testChainedXpath</span>
+                <br/>
+                <span class="ignored-method-name">testFOllowing</span>
+                <br/>
+                <span class="ignored-method-name">testContainsFunc</span>
+                <br/>
+                <span class="ignored-method-name">testParent</span>
+                <br/>
                 <span class="ignored-method-name">testTextFunc</span>
+                <br/>
+                <span class="ignored-method-name">testStartWithFunc</span>
                 <br/>
                 <span class="ignored-method-name">testLogicalOperators</span>
                 <br/>
-                <span class="ignored-method-name">testContainsFunc</span>
+                <span class="ignored-method-name">testChild</span>
+                <br/>
+                <span class="ignored-method-name">testIndexFunc</span>
+                <br/>
+                <span class="ignored-method-name">testprecedingSibling</span>
+                <br/>
+                <span class="ignored-method-name">testPreceding</span>
+                <br/>
+                <span class="ignored-method-name">testDescendant</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -241,12 +261,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">testStartWithFunc</span>
-                <span class="method-start">2474 ms</span>
+                <span class="method-name">testAncestors</span>
+                <span class="method-start">2769 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">4523 ms</span>
+                <span class="method-start">5252 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

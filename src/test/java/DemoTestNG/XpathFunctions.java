@@ -80,6 +80,99 @@ public class XpathFunctions {
         Assert.assertTrue(currURL.contains("https://www.ebay.com/b/Cell-Phones-Smart-"), "\n Wrong redirect!\n");
     }
 
+    //Function index()
+    @Test
+    public void testIndexFunc(){
+        WebElement element = driver.findElement(By.xpath("(//li[contains(@class,'vl-flyout-nav__js-tab')])[5]"));
+        element.click();
+        String currURL = driver.getCurrentUrl();
+        Assert.assertTrue(currURL.contains("Sporting-"), "Wrong element !");
+    }
+
+    //Chained Xpath
+    @Test
+    public void testChainedXpath(){
+        driver.findElement(By.xpath("(//li[contains(@class,'vl-flyout-nav__js-tab')])[5]")).click();
+        driver.findElement(By.xpath("//div[contains(@class,'brw-expandable-list brwel')]" +
+                "//ul[@class='brwel__items']//li[contains(@class,'brwel__item')][3]")).click();
+        String currURL = driver.getCurrentUrl();
+        Assert.assertTrue(currURL.contains("Cycling-Equipment"), "Wrong element !");
+    }
+
+    //XPath using the following - The same test case as 'testChainedXpath', but with following
+    @Test
+    public void testFOllowing(){
+        driver.findElement(By.xpath("(//li[contains(@class,'vl-flyout-nav__js-tab')])[5]")).click();
+        driver.findElement(By.xpath("//div[contains(@class,'brw-expandable-list brwel')]" +
+                "//ul[contains(@class,'brwel__items')]//following::li[3]")).click();
+        String currURL = driver.getCurrentUrl();
+        Assert.assertTrue(currURL.contains("Cycling-Equipment"), "Wrong element !");
+    }
+
+    //XPath using following-sibling
+    @Test
+    public void testFOllowingSibling(){
+        driver.findElement(By.xpath("(//li[contains(@class," +
+                "'carousel__snap-point vl-carousel__item vl-popular-destinations-evo__element')][1]" +
+                "//following-sibling::li)[1]")).click();
+        String currURL = driver.getCurrentUrl();
+        Assert.assertTrue(currURL.contains("Collectible-Sneakers"), "Wrong element !");
+    }
+
+    //XPath using preceding
+    @Test
+    public void testPreceding(){
+        driver.findElement(By.xpath("//div[@class='gh-search-input__wrap']//preceding::input[@name='_nkw']"))
+                .sendKeys("Stagg C405 M");
+        driver.findElement(By.id("gh-search-btn")).click();
+    }
+
+    //XPath using preceding-sibling
+    @Test
+    public void testprecedingSibling(){
+        driver.findElement(By.xpath("//span[@class='gh-nav-link hide-at-lg']" +
+                        "//preceding-sibling::span[@class='gh-nav-link help-deals']"))
+                .click();
+    }
+
+    //Xpath using child //we can use Xpath child axes as many times as you need!
+    @Test
+    public void testChild(){
+        driver.findElement(By.xpath("//div[@class='gf-big-links__col'][4]//ul[@class='gf-big-links__list']//child::li[5]//child::a")).click();
+        String currURL = driver.getCurrentUrl();
+        Assert.assertTrue(currURL.contains("https://jobs.ebayinc.com"), "Wrong element !");
+    }
+
+    //Xpath using parent //we can use Xpath parent axes as many times as you need!
+    @Test
+    public void testParent(){
+       boolean isshown = driver.findElement(By.xpath("//a[@href='https://careers.ebayinc.com/']//parent::li//parent::ul")).isDisplayed();
+       Assert.assertTrue(isshown, "Wrong element !");
+    }
+
+    //Xpath using descendant axes
+    @Test
+    public void testDescendant(){
+       WebElement element = driver.findElement(By.xpath("//div[@class='gh-search-input__wrap']//child::input"));
+       element.sendKeys("running socks");
+       driver.findElement(By.xpath("//div[@class='gh-search-input__wrap']//descendant::button")).click();
+       String search = element.getAttribute("value");
+       Assert.assertTrue(search.isEmpty(), "Search phrase not deleted !");
+    }
+
+    //Xpath using ancestors axes
+    @Test
+    public void testAncestors(){
+        driver.findElement(By.xpath("//a[@href='https://www.ebay.com/b/Electronics/bn_7000259124']" +
+                "//ancestor::div//li[@class='vl-flyout-nav__js-tab'][1]")).click();
+    }
+
+    //Xpath using dynamic xpath via '*' // the same example like testAncestors()
+    @Test
+    public void testAsterisk(){
+        driver.findElement(By.xpath("//*[@class='vl-flyout-nav__js-tab'][1]")).click();
+    }
+
     @AfterMethod
     public void tearDown(){
         driver.quit();

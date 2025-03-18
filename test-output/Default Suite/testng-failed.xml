@@ -5,9 +5,9 @@
     <classes>
       <class name="DemoTestNG.XpathFunctions">
         <methods>
+          <include name="testDescendant"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="testStartWithFunc"/>
         </methods>
       </class> <!-- DemoTestNG.XpathFunctions -->
     </classes>

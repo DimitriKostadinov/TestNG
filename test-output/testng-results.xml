@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-16T19:12:26 EET" name="Default Suite" finished-at="2025-03-16T19:12:31 EET" duration-ms="4780">
+  <suite started-at="2025-03-18T17:40:19 EET" name="Default Suite" finished-at="2025-03-18T17:40:24 EET" duration-ms="5687">
     <groups>
     </groups>
-    <test started-at="2025-03-16T19:12:26 EET" name="TestNG" finished-at="2025-03-16T19:12:31 EET" duration-ms="4780">
+    <test started-at="2025-03-18T17:40:19 EET" name="TestNG" finished-at="2025-03-18T17:40:24 EET" duration-ms="5687">
       <class name="DemoTestNG.XpathFunctions">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:DemoTestNG.XpathFunctions@d62fe5b]" started-at="2025-03-16T19:12:26 EET" name="setUp" finished-at="2025-03-16T19:12:29 EET" duration-ms="2470" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:DemoTestNG.XpathFunctions@6bffbc6d]" started-at="2025-03-18T17:40:19 EET" name="setUp" finished-at="2025-03-18T17:40:21 EET" duration-ms="2767" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testStartWithFunc()[pri:0, instance:DemoTestNG.XpathFunctions@d62fe5b]" started-at="2025-03-16T19:12:29 EET" name="testStartWithFunc" finished-at="2025-03-16T19:12:31 EET" duration-ms="2045" status="PASS">
+        <test-method signature="testAncestors()[pri:0, instance:DemoTestNG.XpathFunctions@6bffbc6d]" started-at="2025-03-18T17:40:21 EET" name="testAncestors" finished-at="2025-03-18T17:40:24 EET" duration-ms="2480" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testStartWithFunc -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:DemoTestNG.XpathFunctions@d62fe5b]" started-at="2025-03-16T19:12:31 EET" name="tearDown" finished-at="2025-03-16T19:12:31 EET" duration-ms="229" status="PASS">
+        </test-method> <!-- testAncestors -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:DemoTestNG.XpathFunctions@6bffbc6d]" started-at="2025-03-18T17:40:24 EET" name="tearDown" finished-at="2025-03-18T17:40:24 EET" duration-ms="387" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
