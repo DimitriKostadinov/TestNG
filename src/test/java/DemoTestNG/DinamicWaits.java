@@ -26,7 +26,7 @@ public class DinamicWaits {
         driver.get("https://www.lambdatest.com/selenium-playground/");
     }
 
-    @Test
+    @Test// Use when need  to wait for a condition on the page,or for web element to be visible or clickable
     public void testExplicitWait(){
         driver.findElement(By.linkText("Dynamic Data Loading")).click();
         driver.findElement(By.id("save")).click();
@@ -64,7 +64,7 @@ public class DinamicWaits {
         });
     }
 
-    @Test
+    @Test// Use implicit wait when need the test to wait for a web element
     public void testImplicitWait(){
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("http://the-internet.herokuapp.com/dynamic_loading");

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="TestNG(failed)">
     <classes>
-      <class name="DemoTestNG.XpathFunctions">
+      <class name="DemoTestNG.Alerts_tests">
         <methods>
-          <include name="testDescendant"/>
-          <include name="setUp"/>
+          <include name="testAutoClose"/>
           <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- DemoTestNG.XpathFunctions -->
+      </class> <!-- DemoTestNG.Alerts_tests -->
     </classes>
   </test> <!-- TestNG(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->
