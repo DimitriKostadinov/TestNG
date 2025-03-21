@@ -5,7 +5,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 public class ItestListeners implements ITestListener {
-
+// run tests from testng_listeners.xml
     @Override
     public void onTestStart(ITestResult result){
         System.out.println("ITestListener - onTestStart");
