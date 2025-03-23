@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="TestNG(failed)">
     <classes>
-      <class name="DemoTestNG.ActionsClass">
+      <class name="DemoTestNG.WindowHandleClass">
         <methods>
+          <include name="testSwitchTo"/>
           <include name="tearDown"/>
-          <include name="test1"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- DemoTestNG.ActionsClass -->
+      </class> <!-- DemoTestNG.WindowHandleClass -->
     </classes>
   </test> <!-- TestNG(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->
