@@ -3,6 +3,7 @@ package DemoTestNG;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -29,6 +30,16 @@ public class AssertionsTest {
         driver.findElement(By.id("isAgeSelected")).click();
         String actualMessage = driver.findElement(By.id("txtAge")).getText();
         Assert.assertTrue(actualMessage.contains("Checked"),"\n Message doesn't contain 'Checked' \n"); // The message will be printed in the console if the test fails.
+    }
+
+    @Test
+    protected void UploadFile(){
+        driver.findElement(By.linkText("Upload File Demo")).click();
+        String filePath = System.getProperty("user.dir") + "/resources/screenshots/testSimpleFormDemo_Pass.png";
+        driver.findElement(By.xpath("//div[@class='mt-30 rounded']//child::div//child::input")).sendKeys(filePath);
+        WebElement element = driver.findElement(By.id("error"));
+        String isElementUpload = element.getText();
+        Assert.assertTrue(isElementUpload.contains("Successfully"),"\n The file isn't upload successfully \n");
     }
 
     @Test

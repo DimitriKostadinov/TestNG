@@ -10,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
 public class CrossBrowser {

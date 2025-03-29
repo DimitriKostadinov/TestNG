@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
@@ -63,7 +64,7 @@ public class RobotClass {
         Assert.assertTrue(formSubmit.isDisplayed(),"The form isn't submit successfully !");
     }
 
-    @AfterMethod
+   @AfterMethod
     public void tearDown(){
         driver.quit();
     }
